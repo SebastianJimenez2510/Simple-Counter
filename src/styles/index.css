@@ -1,12 +1,44 @@
+.timer{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(10, 9, 9);
+    display: flex;
+    justify-content: center;
+}
 
-/* 
+.container{
+    padding-top: 100px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.timer_container{
+    background-color: bisque;
+    width: 40%;
+    padding: 1rem 6rem;
+    border-radius: 1rem; 
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.stop,.restart{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 18px;
+    background-color: black;
+    width: 130px;
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.stop{
+    margin-left: 15px;
+}
 
-*/
+.fa-clock{
+    font-size: 45px;
+}
+
+span{
+    font-size: 30px;
+}

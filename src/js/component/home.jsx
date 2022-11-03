@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useEffect, useState, }from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5"></h1>
-			<p>
-				
-			</p>
-			<a href="#" className="btn">
-				
-			</a>
-			<p>
-			
-			</p>
-		</div>
-	);
-};
+const Clock = () => {
 
-export default Home;
+const [seconds, setSeconds]=useState(0);
+const [minutes, setMinutes]=useState(0);
+const [hours, setHours]=useState(0);
+
+var timer;
+useEffect(()=>{
+
+timer= setInterval(()=>{
+	setSeconds(seconds+1);
+
+		if(seconds===59){
+			setMinutes(minutes+1);
+			setSeconds(0)
+		}if(minutes===59){
+			setHours(hours+1)
+			setMinutes(0)
+		}
+},1000)
+
+return()=> clearInterval(timer);
+
+});
+	return(
+		<>
+		<div className="timer">
+			<div className="container">
+				<div className="timer_container">
+					<i class="fa-solid fa-clock"></i>
+					<span>{hours<10? "0"+hours: hours}</span><span>:</span><span>{minutes<10? "0"+minutes: minutes}</span><span>:</span><span>{seconds<10? "0"+seconds: seconds}</span>
+				</div>
+			</div>
+		</div>
+		</>
+		)
+};
+	
+
+  
+
+export default Clock;
